@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Admin</title>
-    
+</head>
+<body>
     <script src="https://cdn.jsdelivr.net/npm/yamljs@0.3.0/dist/yaml.min.js"></script>
 
     <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
@@ -15,16 +16,14 @@
             fetch("/admin/config.yml")
                 .then(r => r.text())
                 .then(yamlText => {
-                    // La inicialización se hace automáticamente en el body o en el primer div encontrado
+                    // Si el config.yml es correcto (sin errores de unicidad), esto funcionará
                     CMS.init({ config: YAML.parse(yamlText) });
                 })
                 .catch(error => {
+                    // Solo para depuración
                     console.error("Error fetching or parsing config.yml:", error);
                 });
         });
     </script>
-</head>
-<body>
-    <div id="cms-root"></div>
-</body>
+    </body>
 </html>
