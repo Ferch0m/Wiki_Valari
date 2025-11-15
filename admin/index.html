@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Admin</title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin</title>
+</head>
 
-  <body>
-    <!-- Carga Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+<body>
+  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
 
-    <!-- Inicia el CMS -->
-    <script>
-      window.CMS_MANUAL_INIT = true;
-      document.addEventListener("DOMContentLoaded", () => {
-        CMS.init({ config: window.CMS_CONFIG });
-      });
-    </script>
-  </body>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      CMS.init();
+    });
+  </script>
+</body>
 </html>

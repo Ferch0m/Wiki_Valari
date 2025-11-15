@@ -1,4 +1,4 @@
-export async function onRequest({ env }) {
+export async function onRequest({ env }) { 
   const redirect = new URL("https://github.com/login/oauth/authorize");
   redirect.searchParams.set("client_id", env.GITHUB_CLIENT_ID);
   redirect.searchParams.set("scope", "repo,user");

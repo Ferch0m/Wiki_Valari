@@ -3,7 +3,7 @@ backend:
   repo: Ferch0m/Wiki_Valari
   branch: main
   auth_type: implicit
-  app_id: "Ov23liqpgqT6A0bQ0VVa"
+  app_id: Ov23liqpgqT6A0bQ0VVa
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -15,5 +15,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Título"
+        name: "title"
+        widget: "string"
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
