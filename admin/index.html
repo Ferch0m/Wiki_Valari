@@ -12,6 +12,7 @@
             backend: {
                 name: "test-repo",
             },
+            disable_identity: true, 
             collections: [
                 {
                     name: "ocs",
@@ -25,14 +26,7 @@
                 },
             ],
         };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof CMS !== 'undefined') {
-                CMS.init({ config: window.CMS_CONFIG });
-            } else {
-                console.error("CMS script not loaded after DOMContentLoaded.");
-            }
-        });
+        CMS.init({ config: window.CMS_CONFIG });
     </script>
 </body>
 </html>
