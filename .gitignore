@@ -1,0 +1,12 @@
+# Dependencias de Node
+node_modules/
+
+# Carpeta de salida de Eleventy (el sitio ya construido)
+_site/
+
+# Archivos de entorno (si llegas a usarlos para claves secretas)
+.env
+
+# Archivos del sistema operativo (opcional pero recomendado)
+.DS_Store
+Thumbs.db
