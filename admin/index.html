@@ -1,21 +1,32 @@
-<script>
-    window.CMS_CONFIG = {
-        backend: {
-            name: "test-repo",
-        },
-        disable_identity: true,
-        collections: [
-            {
-                name: "test_posts", 
-                label: "Prueba de Contenido",
-                folder: "test",
-                create: true,
-                fields: [
-                    { label: "Titulo", name: "title", widget: "string" },
-                    { label: "Cuerpo", name: "body", widget: "markdown" },
-                ],
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Admin Test</title>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+    <script>
+        window.CMS_CONFIG = {
+            backend: {
+                name: "test-repo",
             },
-        ],
-    };
-    CMS.init({ config: window.CMS_CONFIG });
-</script>
+            disable_identity: true,
+            collections: [
+                {
+                    name: "test_posts",
+                    label: "Prueba de Contenido",
+                    folder: "test",
+                    create: true,
+                    fields: [
+                        { label: "Titulo", name: "title", widget: "string" },
+                        { label: "Cuerpo", name: "body", widget: "markdown" },
+                    ],
+                },
+            ],
+        };
+        CMS.init({ config: window.CMS_CONFIG });
+    </script>
+</body>
+</html>
