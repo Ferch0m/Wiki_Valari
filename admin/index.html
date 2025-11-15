@@ -3,10 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMS Admin</title>
+    <title>CMS Admin Test</title>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-    <script src="/admin/config.js"></script>
+    <script>
+        window.CMS_CONFIG = {
+            backend: {
+                name: "test-repo",
+            },
+            collections: [
+                {
+                    name: "ocs",
+                    label: "Personajes (OCs)",
+                    folder: "ocs",
+                    create: true,
+                    fields: [
+                        { label: "Titulo", name: "titulo", widget: "string" },
+                        { label: "Descripcion", name: "body", widget: "markdown" },
+                    ],
+                },
+            ],
+        };
+        CMS.init({ config: window.CMS_CONFIG });
+    </script>
 </body>
 </html>
