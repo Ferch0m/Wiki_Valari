@@ -3,29 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMS Admin Test</title>
+    <title>Wiki Valari CMS</title>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
     <script>
         window.CMS_CONFIG = {
             backend: {
-                name: "test-repo",
+                name: "github",
+                repo: "Ferch0m/Wiki_Valari",
+                branch: "main",
+                base_url: "/api/auth", // IMPORTANTE para OAuth
             },
-            disable_identity: true,
+            media_folder: "assets/uploads",
+            public_folder: "/assets/uploads",
+
             collections: [
                 {
-                    name: "test_posts",
-                    label: "Prueba de Contenido",
-                    folder: "test",
+                    name: "ocs",
+                    label: "Personajes (OCs)",
+                    folder: "ocs",
                     create: true,
+                    slug: "{{slug}}",
                     fields: [
-                        { label: "Titulo", name: "title", widget: "string" },
-                        { label: "Cuerpo", name: "body", widget: "markdown" },
+                        { label: "Título (Nombre del OC)", name: "titulo", widget: "string" },
+                        { label: "Imagen Principal", name: "image", widget: "image" },
+                        { label: "Layout", name: "layout", widget: "hidden", default: "oc-layout.njk" },
+                        { label: "Descripción", name: "body", widget: "markdown" }
                     ],
                 },
             ],
         };
+
         CMS.init({ config: window.CMS_CONFIG });
     </script>
 </body>
