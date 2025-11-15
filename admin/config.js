@@ -1,24 +1,23 @@
 window.CMS_CONFIG = {
   backend: {
-    name: "github", // Usa GitHub
-    repo: "Ferch0m/Wiki_Valari", // <<-- ¡ASEGÚRATE DE QUE ESTE ES TU REPOSITORIO EXACTO!
-    branch: "main", // La rama principal
+    name: "github",
+    repo: "Ferch0m/Wiki_Valari",
+    branch: "main",
   },
-  media_folder: "assets/uploads", // Dónde guardar imágenes
+  media_folder: "assets/uploads",
   public_folder: "/assets/uploads",
   collections: [
     {
-      name: "ocs", // Nombre de la colección
-      label: "Personajes (OCs)", // Etiqueta en el admin
-      folder: "ocs", // Dónde guardar los archivos
-      create: true, // Permitir crear nuevos
-      slug: "{{slug}}", // El nombre del archivo
+      name: "ocs",
+      label: "Personajes (OCs)",
+      folder: "ocs",
+      create: true,
+      slug: "{{slug}}",
       fields: [
-        // Los campos que pides al crear un OC
-        { label: "Título (Nombre del OC)", name: "titulo", widget: "string" },
+        { label: "Titulo (Nombre del OC)", name: "titulo", widget: "string" },
         { label: "Imagen Principal", name: "image", widget: "image" },
-        { label: "Layout", name: "layout", widget: "hidden", default: "oc-layout.njk" }, // IMPORTANTE: Asigna la plantilla
-        { label: "Descripción", name: "body", widget: "markdown" },
+        { label: "Layout", name: "layout", widget: "hidden", default: "oc-layout.njk" },
+        { label: "Descripcion", name: "body", widget: "markdown" },
       ],
     },
   ],
