@@ -1,41 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wiki Valari CMS</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</head>
-<body>
+    <title>Admin</title>
+  </head>
+
+  <body>
+    <!-- Carga Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+
+    <!-- Inicia el CMS -->
     <script>
-        window.CMS_CONFIG = {
-            backend: {
-                name: "github",
-                repo: "Ferch0m/Wiki_Valari",
-                branch: "main",
-                base_url: "/api/auth", // IMPORTANTE para OAuth
-            },
-            media_folder: "assets/uploads",
-            public_folder: "/assets/uploads",
-
-            collections: [
-                {
-                    name: "ocs",
-                    label: "Personajes (OCs)",
-                    folder: "ocs",
-                    create: true,
-                    slug: "{{slug}}",
-                    fields: [
-                        { label: "Título (Nombre del OC)", name: "titulo", widget: "string" },
-                        { label: "Imagen Principal", name: "image", widget: "image" },
-                        { label: "Layout", name: "layout", widget: "hidden", default: "oc-layout.njk" },
-                        { label: "Descripción", name: "body", widget: "markdown" }
-                    ],
-                },
-            ],
-        };
-
-        CMS.init({ config: window.CMS_CONFIG });
+      window.CMS_MANUAL_INIT = true;
+      document.addEventListener("DOMContentLoaded", () => {
+        CMS.init();
+      });
     </script>
-</body>
+  </body>
 </html>
