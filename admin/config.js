@@ -1,6 +1,6 @@
 window.CMS_CONFIG = {
   backend: {
-    name: "test-repo", // CAMBIAMOS EL BACKEND A MODO DE PRUEBA
+    name: "test-repo",
   },
   collections: [
     {
@@ -9,7 +9,6 @@ window.CMS_CONFIG = {
       folder: "ocs",
       create: true,
       fields: [
-        // Conservamos solo los campos esenciales
         { label: "Titulo (Nombre del OC)", name: "titulo", widget: "string" },
         { label: "Imagen Principal", name: "image", widget: "image" },
         { label: "Layout", name: "layout", widget: "hidden", default: "oc-layout.njk" },
