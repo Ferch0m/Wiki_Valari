@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Admin</title>
+  <meta charset="UTF-8" />
+  <title>Admin</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/yamljs@0.3.0/dist/yaml.min.js"></script>
+      <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
 
-  <script>
-    window.CMS_MANUAL_INIT = true;
+  <script>
+    window.CMS_MANUAL_INIT = true;
 
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch("/admin/config.yml")
-        .then(r => r.text())
-        .then(yamlText => {
-          CMS.init({ config: YAML.parse(yamlText) });
-        });
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/yamljs@0.3.0/dist/yaml.min.js"></script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("/admin/config.yml")
+        .then(r => r.text())
+        .then(yamlText => {
+          // ¡YAML.parse ahora existe!
+          CMS.init({ config: YAML.parse(yamlText) });
+        })
+         .catch(error => {
+            console.error("Error fetching or parsing config.yml:", error);
+         });
+    });
+  </script>
 </body>
 </html>
